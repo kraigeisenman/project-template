@@ -8,7 +8,7 @@ If this section still says TODO, this is a brand-new project. Before anything el
 
 1. Ask Colby in two or three short questions what he wants to build, who it's for, and where it will run (Windows PC, browser, Claude).
 2. Suggest the simplest way to build a first version, in plain words, and wait for his yes.
-3. On a branch, replace this section with a short description, rename the heading at the top to the project's name, rewrite `README.md` to match, and open a pull request.
+3. On a branch, replace this section with a short description, rename the heading at the top to the project's name, rewrite `README.md` to match, delete the `recipes/` folder, and open a pull request.
 
 Keep the first version small. Plenty of ideas can wait for the next pull request.
 

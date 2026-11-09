@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Runs before every commit, from any tool (Claude, GitHub Desktop, the terminal).
+
+branch="$(git symbolic-ref --short -q HEAD)"
+if [ "$branch" = main ] || [ "$branch" = master ]; then
+  echo "Stopped: you're on $branch. Changes go on their own branch, then into a pull request."
+  echo "Make a branch first:  git switch -c short-name-for-the-change"
+  exit 1
+fi
+
+exec bash "$(git rev-parse --show-toplevel)/scripts/repo-checks.sh" --staged

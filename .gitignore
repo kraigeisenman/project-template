@@ -1,0 +1,20 @@
+# Secrets: keep keys in .env on your computer, never on GitHub
+.env
+.env.*
+!.env.example
+
+# Your own saved data and exports
+Data/
+Exports/
+*.log
+
+# Tools
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,20 @@
+name: Checks
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  safety:
+    name: Safety checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: No secrets, customer data or blocked files
+        if: github.event_name == 'pull_request'
+        run: bash scripts/repo-checks.sh --range "origin/${{ github.base_ref }}" HEAD
